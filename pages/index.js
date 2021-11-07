@@ -1,8 +1,22 @@
+import Layout from '../components/layout/Layout'
+import Navbar from '../components/Navbar/Navbar'
+import { MainContainer } from '../GlobalStyles/GlobalStyles'
+
 import sanity from '../lib/sanity'
 
 const Home = ({ properties }) => {
+  const titleText =
+    'Airbnb: Vacation Rentals, Cabin, Beach Houses and Unique Houses'
   console.log(properties)
-  return <h1>Sanity</h1>
+  return (
+    <>
+      <Layout pageTitle={titleText}>
+        {/* <MainContainer>
+          <h1>Sanity</h1>
+        </MainContainer> */}
+      </Layout>
+    </>
+  )
 }
 
 export const getServerSideProps = async () => {

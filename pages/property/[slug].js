@@ -1,7 +1,9 @@
 import React from 'react'
 import sanity, { urlFor } from '../../lib/sanity'
 import Image from 'next/image'
-
+import Layout from '../../components//layout/Layout'
+import Navbar from '../../components/Navbar/Navbar'
+import { Container } from '../../GlobalStyles/GlobalStyles'
 export default function Property({
   title,
   location,
@@ -18,30 +20,11 @@ export default function Property({
   reviews,
 }) {
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <div>
-        <Image
-          src={urlFor(mainImage).url()}
-          width={300}
-          height={400}
-          alt={title}
-        />
-        <div>
-          {images.slice(0, 4).map((image, index) => (
-            <div key={index}>
-              <Image
-                src={urlFor(image).url()}
-                width={400}
-                height={300}
-                alt={title}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <Layout pageTitle={title}>
+      <Container>
+        <h1>{title}</h1>
+      </Container>
+    </Layout>
   )
 }
 
