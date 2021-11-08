@@ -19,9 +19,11 @@ export const HeaderItems = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  width: 50%;
 
   @media (min-width: 1400px) {
     justify-content: space-between;
+    width: 70%;
   }
 `
 
@@ -30,6 +32,7 @@ export const NavbarContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  z-index: 1000;
 
   @media (max-width: 1400px) {
     width: 60%;
