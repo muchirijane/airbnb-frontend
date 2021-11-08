@@ -10,39 +10,8 @@ export const PropertyTitle = styled.h1`
   color: var(--dark-grey);
   margin-bottom: 1rem;
 `
-export const PropertyOverview = styled.div`
-  font-size: 1.5rem;
-  color: var(--dark-grey);
-  display: flex;
-  align-items: center;
-  h4 {
-    margin-right: 1rem;
-    margin-left: 0.6rem;
-  }
-  h5 {
-    color: var(--colour-grey);
-  }
-  svg {
-    color: var(--colour-pink);
-  }
-`
-export const PropertyStart = styled.span`
-  display: contents;
-  color: var(--colour-pink);
-`
-export const PropertySuperHost = styled.div`
-  margin-left: 1rem;
-`
 
-export const PropertyPlace = styled.a`
-  text-decoration: underline;
-  color: var(--dark-grey);
-  font-size: 1.4rem;
-  margin-left: 1rem;
-  cursor: pointer;
-`
-
-export const PropertyImageContainer = styled.div`
+export const PropertyImageContainer = styled.section`
   margin-top: 2rem;
   overflow: hidden;
   display: grid;
@@ -60,18 +29,7 @@ export const PropertyImageContainer = styled.div`
   }
 `
 
-export const PropertyMainImage = styled.div`
-  height: 100%;
-  img {
-    border-top-left-radius: 3rem;
-    border-bottom-left-radius: 3rem;
-    height: auto;
-  }
-  @media ${device.laptopM} {
-    width: 100%;
-  }
-`
-export const PropertyImages = styled.div`
+export const PropertyImagesWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1rem;
@@ -85,8 +43,4 @@ export const PropertyImages = styled.div`
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
-`
-
-export const PropertyImageItems = styled.div`
-  height: 100%;
 `

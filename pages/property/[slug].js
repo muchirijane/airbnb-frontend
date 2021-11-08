@@ -1,23 +1,20 @@
 import React from 'react'
 import sanity, { urlFor } from '../../lib/sanity'
-import Image from 'next/image'
+
 import Layout from '../../components//layout/Layout'
-import Navbar from '../../components/Navbar/Navbar'
+
 import { Container } from '../../GlobalStyles/GlobalStyles'
-import { AiTwotoneStar } from 'react-icons/ai'
-import { BsAwardFill } from 'react-icons/bs'
+
 import {
   PropertyImageContainer,
-  PropertyImageItems,
-  PropertyImages,
-  PropertyMainImage,
-  PropertyOverview,
-  PropertyPlace,
-  PropertyStart,
-  PropertySuperHost,
+  PropertyImagesWrapper,
   PropertyTitle,
   PropertyWrapper,
 } from '../../styles/PropertyItem.Style'
+import PropertyContent from '../../components/UI/PropertyContent/PropertyContent'
+import PropertyImages from '../../components/UI/PropertyImages/PropertyImages'
+import FeaturedImage from '../../components/UI/PropertyImages/FeaturedImage'
+import PropertyOverView from '../../components/UI/PropertyOverView/PropertyOverView'
 export default function Property({
   title,
   place,
@@ -36,6 +33,9 @@ export default function Property({
 }) {
   const ratingNumber = reviews.map((review) => review.rating)
   const highestRating = ratingNumber.reduce((a, b) => Math.max(a, b))
+  const totalPropertyReviews = reviews.length
+
+  console.log(propertyType)
 
   return (
     <Layout pageTitle={title}>
@@ -43,50 +43,32 @@ export default function Property({
         <PropertyWrapper>
           <PropertyTitle>{title}</PropertyTitle>
 
-          <PropertyOverview>
-            <PropertyStart>
-              <AiTwotoneStar />
-            </PropertyStart>
-            <h4>{highestRating}</h4>
-            <h5>({ratingNumber.length}reviews)</h5>
-            <PropertySuperHost>
-              . <BsAwardFill /> Superhost .
-            </PropertySuperHost>
-            <PropertyPlace>{place}</PropertyPlace>
-          </PropertyOverview>
-          <PropertyImageContainer>
-            <PropertyMainImage>
-              <Image
-                src={urlFor(mainImage).width(600).url()}
-                alt={title}
-                width={600}
-                height={600}
-                layout="responsive"
-              />
-            </PropertyMainImage>
-            <PropertyImages>
-              {images.slice(0, 4).map((image) => (
-                <PropertyImageItems>
-                  <Image
-                    key={image.id}
-                    src={urlFor(image).width(350).url()}
-                    alt={title}
-                    width={350}
-                    height={350}
-                    layout="responsive"
-                  />
-                </PropertyImageItems>
-              ))}
-            </PropertyImages>
-          </PropertyImageContainer>
-          <div>
-            <p>{description}</p>
-            <p>
-              | {beds} beds | {bedrooms} bedrooms | {baths} baths
-            </p>
+          <PropertyOverView
+            highestRating={highestRating}
+            totalReviews={totalPropertyReviews}
+            place={place}
+          />
 
-            <p>$ {pricePerNight} per night</p>
-          </div>
+          <PropertyImageContainer>
+            <FeaturedImage
+              mainImage={urlFor(mainImage).width(600).url()}
+              mainAlt={title}
+            />
+            <PropertyImagesWrapper>
+              {images.slice(0, 4).map((image, index) => (
+                <PropertyImages
+                  key={index}
+                  propertyImg={urlFor(image).width(350).url()}
+                  propertyImgAlt={image.caption}
+                />
+              ))}
+            </PropertyImagesWrapper>
+          </PropertyImageContainer>
+          <PropertyContent
+            price={pricePerNight}
+            highestReview={highestRating}
+            totalReviews={totalPropertyReviews}
+          />
         </PropertyWrapper>
       </Container>
     </Layout>
