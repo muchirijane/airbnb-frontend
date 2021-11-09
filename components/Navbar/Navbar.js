@@ -44,9 +44,9 @@ export default function Navbar() {
 
             <HostContainer>
               <Link href="/">Become a host</Link>
-              <Link href="/">
+              <a href="/">
                 <BiGlobe />
-              </Link>
+              </a>
             </HostContainer>
           </NavbarContainer>
         </HeaderItems>

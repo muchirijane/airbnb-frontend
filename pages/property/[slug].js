@@ -25,8 +25,8 @@ export default function Property({
   images,
   pricePerNight,
   beds,
-  bedrooms,
-  baths,
+  bedroom,
+  bathRoom,
   guests,
   host,
   reviews,
@@ -35,7 +35,7 @@ export default function Property({
   const highestRating = ratingNumber.reduce((a, b) => Math.max(a, b))
   const totalPropertyReviews = reviews.length
 
-  console.log(propertyType)
+  console.log(host.image, mainImage)
 
   return (
     <Layout pageTitle={title}>
@@ -68,6 +68,13 @@ export default function Property({
             price={pricePerNight}
             highestReview={highestRating}
             totalReviews={totalPropertyReviews}
+            propertyType={propertyType}
+            hostName={host.name}
+            totalGuests={guests}
+            beds={beds}
+            baths={bathRoom}
+            hostImage={urlFor(host.image).width(60).url()}
+            hostAlt={host.name}
           />
         </PropertyWrapper>
       </Container>
@@ -88,8 +95,8 @@ export async function getServerSideProps(pageContext) {
     images,
     pricePerNight,
     beds,
-    bedrooms,
-    baths,
+    bedroom,
+    bathRoom,
     guests,
     host->{
       _id,
@@ -128,8 +135,8 @@ export async function getServerSideProps(pageContext) {
         images: property.images,
         pricePerNight: property.pricePerNight,
         beds: property.beds,
-        bedrooms: property.bedrooms,
-        baths: property.baths,
+        bedroom: property.bedroom,
+        bathRoom: property.bathRoom,
         guests: property.guests,
         host: property.host,
         reviews: property.reviews,

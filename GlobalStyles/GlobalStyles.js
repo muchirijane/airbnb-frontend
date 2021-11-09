@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
   --colour-pink: #ff385c;
   --medium-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
   --light-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+  --big-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.12) ;
   
 }
 
@@ -34,6 +35,11 @@ body{
   font-weight: 400;
  background-color: var(----colour-white);
   color: var(--colour-grey);
+}
+
+button{
+  cursor: pointer;
+  border: none;
 }
 
 
