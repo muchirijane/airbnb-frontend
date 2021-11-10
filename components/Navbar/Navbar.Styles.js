@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../../GlobalStyles/GlobalStyles'
 export const Header = styled.header`
   background-color: var(--colour-white);
   box-shadow: var(--medium-shadow);
@@ -11,42 +12,62 @@ export const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 8rem;
+  height: 9rem;
   position: relative;
 `
 
-export const HeaderItems = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 50%;
+export const NavbarContainer = styled.nav`
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
 
-  @media (min-width: 1400px) {
-    justify-content: space-between;
-    width: 70%;
+  z-index: 1000;
+  background-color: var(--colour-white);
+  position: absolute;
+  top: 8rem;
+  right: 0;
+  border-radius: 1.5rem;
+  box-shadow: var(--big-shadow);
+
+  @media (min-width: 24px) {
   }
 `
 
-export const NavbarContainer = styled.nav`
+export const NavbarItem1 = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  z-index: 1000;
+  flex-direction: column;
 
-  @media (max-width: 1400px) {
-    width: 60%;
+  a:link,
+  a:visited {
+    color: var(--colour-black);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding: 1rem 3rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--medium-white);
+    }
   }
+`
+export const NavbarItem2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--light-grey);
+  padding-top: 2rem;
+  transition: all 0.3s ease-in-out;
 
-  @media (max-width: 1024px) {
-    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-    background-color: var(--colour-white);
-    position: absolute;
-    top: 8rem;
-    right: 0;
-    height: 50vh;
-    box-shadow: var(--medium-shadow);
-    padding: 3rem 2rem;
+  a:link,
+  a:visited {
+    color: var(--colour-grey);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding: 1rem 3rem;
+    &:hover {
+      background-color: var(--medium-white);
+    }
   }
 `
 
@@ -60,6 +81,10 @@ export const SearchContainer = styled.div`
   border-radius: 30rem;
   box-shadow: var(--medium-shadow);
   padding: 1rem 2rem;
+
+  @media ${device.laptop} {
+    display: none;
+  }
 
   input {
     width: 100%;
@@ -129,14 +154,5 @@ export const ProfileContainer = styled.button`
 export const ProfileImage = styled.div`
   img {
     border-radius: 50%;
-  }
-`
-
-export const HostContainer = styled.div`
-  a {
-    display: inline-block;
-    &:not(:last-child) {
-      margin-right: 2rem;
-    }
   }
 `

@@ -1,6 +1,6 @@
 import GlobalStyles from '../../GlobalStyles/GlobalStyles'
 import Navbar from '../Navbar/Navbar'
-import Meta from './meta'
+import Meta from './Meta'
 
 export default function Layout({ pageTitle, children }) {
   return (

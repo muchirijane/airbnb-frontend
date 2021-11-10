@@ -53,7 +53,6 @@ button{
 }
 
 
-   
 `
 
 export default GlobalStyles
@@ -68,8 +67,9 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0 2rem;
 `
+
 export const ButtonLink = styled.button`
-border-radius: 5px;
+  border-radius: 5px;
   border: none;
   color: var(--colour-black);
   margin-top: 1rem;

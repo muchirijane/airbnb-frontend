@@ -4,10 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {
   Header,
-  HeaderItems,
   HeaderWrapper,
-  HostContainer,
   NavbarContainer,
+  NavbarItem1,
+  NavbarItem2,
   ProfileContainer,
   ProfileImage,
   SearchContainer,
@@ -31,25 +31,15 @@ export default function Navbar() {
             layout="fixed"
           />
         </Link>
-        <HeaderItems>
-          <NavbarContainer isOpen={isOpen}>
-            <SearchContainer>
-              <label>
-                <input type="search" placeholder="Start your Search" />
-              </label>
-              <button>
-                <BiSearch />
-              </button>
-            </SearchContainer>
+        <SearchContainer>
+          <label>
+            <input type="search" placeholder="Start your Search" />
+          </label>
+          <button>
+            <BiSearch />
+          </button>
+        </SearchContainer>
 
-            <HostContainer>
-              <Link href="/">Become a host</Link>
-              <Link href="/">
-                <BiGlobe />
-              </Link>
-            </HostContainer>
-          </NavbarContainer>
-        </HeaderItems>
         <ProfileContainer onClick={navbarToggle}>
           <BiMenu onClick={navbarToggle} />
           <ProfileImage>
@@ -61,6 +51,24 @@ export default function Navbar() {
             />
           </ProfileImage>
         </ProfileContainer>
+        <NavbarContainer isOpen={isOpen}>
+          <NavbarItem1>
+            <Link href="/">Message</Link>
+            <Link href="/">Notification</Link>
+            <Link href="/">Trips</Link>
+            <Link href="/">WishList</Link>
+          </NavbarItem1>
+          <NavbarItem2 className="defaultLink">
+            <Link href="/">Host your home</Link>
+            <Link href="/">Host your experience</Link>
+            <Link href="/">Account</Link>
+            <Link href="/">WishList</Link>
+          </NavbarItem2>
+          <NavbarItem2 className="defaultLink">
+            <Link href="/">Help</Link>
+            <Link href="/">Logout</Link>
+          </NavbarItem2>
+        </NavbarContainer>
       </HeaderWrapper>
     </Header>
   )
