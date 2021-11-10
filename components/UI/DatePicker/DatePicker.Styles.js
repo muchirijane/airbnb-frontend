@@ -185,3 +185,4 @@ export const ButtonChecker = styled.button`
     transform: translateY(1px);
   }
 `
+export const GuestRuleText = styled.p``

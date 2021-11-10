@@ -19,6 +19,16 @@ const GlobalStyles = createGlobalStyle`
   --medium-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
   --light-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
   --big-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.12) ;
+  --pink-gradient: linear-gradient(
+    94deg,
+    rgba(218, 42, 102, 1) 0%,
+    rgba(204, 3, 71, 1) 67%
+  );
+  --pink-gradientHover: linear-gradient(
+      94deg,
+      rgba(204, 3, 71, 1) 0%,
+      rgba(218, 42, 102, 1) 80%
+    );
   
 }
 
@@ -57,6 +67,26 @@ export const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
+`
+export const ButtonLink = styled.button`
+border-radius: 5px;
+  border: none;
+  color: var(--colour-black);
+  margin-top: 1rem;
+  padding-right: 0.8rem;
+
+  background-color: transparent;
+
+  text-decoration: underline;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.7rem;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    color: var(--colour-pink);
+  }
 `
 
 export const device = {

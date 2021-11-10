@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <Header>
       <HeaderWrapper>
-        <a href="/">
+        <Link href="/">
           <Image
             src="/airbnb-logo.svg"
             alt="airbnb logo"
@@ -30,7 +30,7 @@ export default function Navbar() {
             height={34}
             layout="fixed"
           />
-        </a>
+        </Link>
         <HeaderItems>
           <NavbarContainer isOpen={isOpen}>
             <SearchContainer>
@@ -44,9 +44,9 @@ export default function Navbar() {
 
             <HostContainer>
               <Link href="/">Become a host</Link>
-              <a href="/">
+              <Link href="/">
                 <BiGlobe />
-              </a>
+              </Link>
             </HostContainer>
           </NavbarContainer>
         </HeaderItems>
