@@ -15,6 +15,7 @@ import PropertyContent from '../../components/UI/PropertyContent/PropertyContent
 import PropertyImages from '../../components/UI/PropertyImages/PropertyImages'
 import FeaturedImage from '../../components/UI/PropertyImages/FeaturedImage'
 import PropertyOverView from '../../components/UI/PropertyOverView/PropertyOverView'
+import PropertyLocation from '../../components/UI/PropertyLocation/PropertyLocation'
 export default function Property({
   title,
   place,
@@ -35,7 +36,7 @@ export default function Property({
   const highestRating = ratingNumber.reduce((a, b) => Math.max(a, b))
   const totalPropertyReviews = reviews.length
 
-  console.log(host.image, mainImage)
+  console.log(location.lng)
 
   return (
     <Layout pageTitle={title}>
@@ -75,6 +76,11 @@ export default function Property({
             baths={bathRoom}
             hostImage={urlFor(host.image).width(60).url()}
             hostAlt={host.name}
+          />
+          <PropertyLocation
+            lat={location.lat}
+            lng={location.lng}
+            place={place}
           />
         </PropertyWrapper>
       </Container>
