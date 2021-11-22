@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-import { ImHome3 } from 'react-icons/im'
-import { SiAirbnb } from 'react-icons/si'
 
 export const PropertyContainer = styled.section`
   margin-top: 5rem;

@@ -20,6 +20,7 @@ export const PropertyHostTitle = styled.div`
 `
 export const PropertyHostItem = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `
 export const PropertyHostContent = styled.div`
   &:not(:last-child) {

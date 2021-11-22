@@ -5,6 +5,7 @@ export const PropertyOverviewWrapper = styled.section`
   color: var(--dark-grey);
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   h4 {
     margin-right: 1rem;
     margin-left: 0.6rem;

@@ -35,7 +35,7 @@ export const PropertyImagesWrapper = styled.div`
   grid-gap: 1rem;
   height: 100%;
 
-  @media ${device.laptopM} {
+  @media ${device.laptopB} {
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }

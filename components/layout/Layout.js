@@ -1,4 +1,5 @@
 import GlobalStyles from '../../GlobalStyles/GlobalStyles'
+import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar'
 import Meta from './Meta'
 
@@ -10,6 +11,7 @@ export default function Layout({ pageTitle, children }) {
       <Navbar />
 
       <main>{children}</main>
+      <Footer />
     </div>
   )
 }
