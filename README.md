@@ -1,6 +1,6 @@
 # Airbnb CLone with Sanity Backend
 
-## Live Code - [Preview](https://jane.vercel.app/)
+## Live Code - [Preview](https://airbnb-site.vercel.app/)
 
 <!-- ctrl+shift+v : preview -->
 
@@ -18,13 +18,15 @@ You're sections headers will be used to reference location of destination.
 
 ---
 
-## Live Code - [Preview](https://jane.vercel.app/)
+## Live Code - [Preview](https://airbnb-site.vercel.app/)
 
 ## Description
 
 Airbnb frontend clone was created from scratch with data created from sanity io as a backend with different schemas. In the backend you can add details about the property like: location, description, multiple images, reviews and the hosts of each property. The frontend was built with Next to fetch data from sanity to render it to the client side.
 
 - You can go through the backend data and see the schemas created.
+
+- Check out the [backend code - source](https://github.com/muchirijane/airbnb-sanity-site)
 
 ### Future add ons
 

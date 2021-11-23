@@ -73,6 +73,7 @@ button{
 a:link{
   text-decoration: none;
   color: var(--colour-grey);
+  cursor: pointer;
 }
 
 `

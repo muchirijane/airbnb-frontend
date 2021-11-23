@@ -158,7 +158,10 @@ export const ButtonOption = styled.button`
     font-size: 1.5rem;
   }
 `
-export const ButtonChecker = styled.button`
+export const ButtonChecker = styled.a`
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
   background: rgb(218, 42, 102);
   background: linear-gradient(
     94deg,

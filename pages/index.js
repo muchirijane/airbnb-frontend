@@ -1,8 +1,15 @@
+import React from 'react'
 import Layout from '../components/layout/Layout'
 import Navbar from '../components/Navbar/Navbar'
+import PropertiesClusterMap from '../components/UI/PropertiesClusterMap/PropertiesClusterMap'
+import PropertiesCollection from '../components/UI/PropertiesCollection/PropertiesCollection'
 import { MainContainer } from '../GlobalStyles/GlobalStyles'
 
-import sanity from '../lib/sanity'
+import sanity, { urlFor } from '../lib/sanity'
+import {
+  PropertiesContainer,
+  PropertiesWrapper,
+} from '../styles/Properties.Style'
 
 const Home = ({ properties }) => {
   const titleText =
@@ -11,9 +18,30 @@ const Home = ({ properties }) => {
   return (
     <>
       <Layout pageTitle={titleText}>
-        {/* <MainContainer>
-          <h1>Sanity</h1>
-        </MainContainer> */}
+        {properties && (
+          <PropertiesContainer>
+            <PropertiesWrapper>
+              {properties.slice(0, 3).map((property, index) => (
+                <PropertiesCollection
+                  key={property._id}
+                  propertiesImg={urlFor(property.mainImage).width(350).url()}
+                  propertiesImgAlt={property.title}
+                  highestRating={property.reviews.reduce(
+                    (a, b) => Math.max(a, b.rating),
+                    0
+                  )}
+                  totalReviews={property.reviews.length}
+                  place={property.propertyType}
+                  title={property.title}
+                  price={property.pricePerNight}
+                  propertyLink={`property/${property.slug.current}`}
+                />
+              ))}
+            </PropertiesWrapper>
+
+            <PropertiesClusterMap properties={properties} />
+          </PropertiesContainer>
+        )}
       </Layout>
     </>
   )

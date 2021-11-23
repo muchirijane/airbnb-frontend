@@ -77,7 +77,7 @@ export default function DatePicker({ price, highestReview, totalReviews }) {
               <FiChevronDown onClick={toggleHandler} />
             )}
           </GuestSelector>
-          <ButtonChecker>Check availability</ButtonChecker>
+          <ButtonChecker href="/">Check availability</ButtonChecker>
         </DateContent>
       </DatePickerWrapper>
       <GuestOptionWrapper isOpen={isOpen}>
@@ -96,8 +96,6 @@ export default function DatePicker({ price, highestReview, totalReviews }) {
                 <BiPlus />
               </ButtonOption>
             </ButtonOptionWrapper>
-            
-            
           </GuestOptionItem>
         ))}
       </GuestOptionWrapper>
