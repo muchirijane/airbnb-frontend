@@ -1,13 +1,7 @@
 import styled from 'styled-components'
 
-// export const CollectionContainer = styled.a`
-//   cursor: pointer;
-//   text-decoration: none;
-// `
 export const CollectionContainer = styled.div`
   cursor: pointer;
-  padding: 0 2rem;
-  margin-top: 4rem;
 `
 
 export const PropertiesImgWrapper = styled.div`

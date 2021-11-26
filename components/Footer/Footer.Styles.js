@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FooterContainer = styled.section`
+export const FooterContainer = styled.footer`
   margin-top: 5rem;
   background-color: var(--medium-white);
   padding: 5rem 0;

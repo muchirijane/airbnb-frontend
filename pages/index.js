@@ -9,6 +9,8 @@ import sanity, { urlFor } from '../lib/sanity'
 import {
   PropertiesContainer,
   PropertiesWrapper,
+  PropertiesPlaceWrapper,
+  PropertiesPlaceContainer,
 } from '../styles/Properties.Style'
 
 const Home = ({ properties }) => {
@@ -20,24 +22,77 @@ const Home = ({ properties }) => {
       <Layout pageTitle={titleText}>
         {properties && (
           <PropertiesContainer>
-            <PropertiesWrapper>
-              {properties.slice(0, 3).map((property, index) => (
-                <PropertiesCollection
-                  key={property._id}
-                  propertiesImg={urlFor(property.mainImage).width(350).url()}
-                  propertiesImgAlt={property.title}
-                  highestRating={property.reviews.reduce(
-                    (a, b) => Math.max(a, b.rating),
-                    0
-                  )}
-                  totalReviews={property.reviews.length}
-                  place={property.propertyType}
-                  title={property.title}
-                  price={property.pricePerNight}
-                  propertyLink={`property/${property.slug.current}`}
-                />
-              ))}
-            </PropertiesWrapper>
+            <PropertiesPlaceContainer>
+              <PropertiesPlaceWrapper>
+                <h2>Los Angeles</h2>
+                <PropertiesWrapper>
+                  {properties.slice(0, 3).map((property, index) => (
+                    <PropertiesCollection
+                      key={property._id}
+                      propertiesImg={urlFor(property.mainImage)
+                        .width(350)
+                        .url()}
+                      propertiesImgAlt={property.title}
+                      highestRating={property.reviews.reduce(
+                        (a, b) => Math.max(a, b.rating),
+                        0
+                      )}
+                      totalReviews={property.reviews.length}
+                      place={property.propertyType}
+                      title={property.title}
+                      price={property.pricePerNight}
+                      propertyLink={`property/${property.slug.current}`}
+                    />
+                  ))}
+                </PropertiesWrapper>
+              </PropertiesPlaceWrapper>
+              <PropertiesPlaceWrapper>
+                <h2>San Diego</h2>
+                <PropertiesWrapper>
+                  {properties.slice(2, 5).map((property, index) => (
+                    <PropertiesCollection
+                      key={property._id}
+                      propertiesImg={urlFor(property.mainImage)
+                        .width(350)
+                        .url()}
+                      propertiesImgAlt={property.title}
+                      highestRating={property.reviews.reduce(
+                        (a, b) => Math.max(a, b.rating),
+                        0
+                      )}
+                      // totalReviews={property.reviews.length}
+                      place={property.propertyType}
+                      title={property.title}
+                      price={property.pricePerNight}
+                      propertyLink={`property/${property.slug.current}`}
+                    />
+                  ))}
+                </PropertiesWrapper>
+              </PropertiesPlaceWrapper>
+              <PropertiesPlaceWrapper>
+                <h2>San Francisco</h2>
+                <PropertiesWrapper>
+                  {properties.slice(0, 3).map((property, index) => (
+                    <PropertiesCollection
+                      key={property._id}
+                      propertiesImg={urlFor(property.mainImage)
+                        .width(350)
+                        .url()}
+                      propertiesImgAlt={property.title}
+                      highestRating={property.reviews.reduce(
+                        (a, b) => Math.max(a, b.rating),
+                        0
+                      )}
+                      totalReviews={property.reviews.length}
+                      place={property.propertyType}
+                      title={property.title}
+                      price={property.pricePerNight}
+                      propertyLink={`property/${property.slug.current}`}
+                    />
+                  ))}
+                </PropertiesWrapper>
+              </PropertiesPlaceWrapper>
+            </PropertiesPlaceContainer>
 
             <PropertiesClusterMap properties={properties} />
           </PropertiesContainer>
